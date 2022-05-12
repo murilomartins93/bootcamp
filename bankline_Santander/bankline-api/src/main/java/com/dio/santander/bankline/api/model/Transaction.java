@@ -12,8 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tab_transition")
-public class Transition {
+@Table(name = "tab_transaction")
+public class Transaction {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,12 +24,15 @@ public class Transition {
 	private Double value;
 	
 	@Enumerated(EnumType.STRING)
-	private TransitionType type;
+	private TransactionType type;
 	
-	public Transition() {
+	@Column(name = "id_acc")
+	private Integer idAcc;
+	
+	public Transaction() {
 	}
 
-	public Transition(Integer id, LocalDateTime dateTime, String description, Double value, TransitionType type) {
+	public Transaction(Integer id, LocalDateTime dateTime, String description, Double value, TransactionType type) {
 		this.id = id;
 		this.dateTime = dateTime;
 		this.description = description;
@@ -69,12 +72,20 @@ public class Transition {
 		this.value = value;
 	}
 
-	public TransitionType getType() {
+	public TransactionType getType() {
 		return type;
 	}
 
-	public void setType(TransitionType type) {
+	public void setType(TransactionType type) {
 		this.type = type;
 	}	
+	
+	public Integer getIdAcc() {
+		return idAcc;
+	}
+	
+	public void setIdAcc(Integer idAcc) {
+		this.idAcc = idAcc;
+	}
 	
 }
