@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "tab_transaction")
 public class Transaction {
@@ -48,6 +50,7 @@ public class Transaction {
 		this.id = id;
 	}
 
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	public LocalDateTime getDateTime() {
 		return dateTime;
 	}
