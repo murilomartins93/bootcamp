@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from "@angular/common";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,8 @@ registerLocaleData(localePt);
     NgbModule,
     FormsModule,
     HttpClientModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    CommonModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]

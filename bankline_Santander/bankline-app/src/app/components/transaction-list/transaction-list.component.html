@@ -4,13 +4,13 @@
     <p class="lead-1">Listagem das movimentações por correntista</p>
     <hr class="my-2">
     <div class="input-group">
-      <select  id="iHolder" [(ngModel)]="holder" class="form-select">
-        <option *ngFor="let c of holder" [ngValue]="c" >{{c.cpf}}-{{c.name}}</option>
+      <select  id="iHolders" [(ngModel)]="holders" class="form-select">
+        <option *ngFor="let c of holders" [ngValue]="c" >{{c.cpf}}-{{c.name}}</option>
       </select>
-    <button class="btn btn-outline-secondary me-md-2 btn-sm" type="button" (click)="listTransactions()">Buscar</button>
-    <a class="btn btn-outline-primary btn-sm" routerLink="/transaction-new">Nova Movimentação</a>
-    <a class="btn btn-outline-primary btn-sm" routerLink="/holder">Correntistas</a>
-  </div>
+      <button class="btn btn-outline-secondary btn-sm" type="button" (click)="listTransactions()">Buscar</button>
+      <a class="btn btn-outline-primary btn-sm pt-2" routerLink="/transaction-new">Nova Movimentação</a>
+      <a class="btn btn-outline-primary btn-sm pt-2" routerLink="/holder">Correntistas</a>
+    </div>
 
 <table class="table table-striped">
     <thead>
@@ -32,3 +32,5 @@
     </tr>
     </tbody>
   </table>
+</div>
+</div>

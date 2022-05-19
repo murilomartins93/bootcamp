@@ -9,19 +9,20 @@ import { TransactionService } from 'src/app/services/transaction.service';
 })
 
 export class TransactionListComponent implements OnInit {
-
   transactions: any;
   holders: any;
-  holder: any;
+  holder: any={};
 
-  constructor(private transactionService: TransactionService, private holderService: HolderService,) { }
+  constructor(
+    private transactionService: TransactionService, 
+    private holderService: HolderService,) { }
 
   ngOnInit(): void {
     this.showHolders();
   }
 
   listTransactions(): void {
-    this.transactionService.findByIdAcc(this.holder.id)
+    this.transactionService.findByIdAcc(this.holder.idAcc)
       .subscribe(
         data => {
           this.transactions = data;
@@ -31,7 +32,7 @@ export class TransactionListComponent implements OnInit {
           console.log(error);
         });
   }
-
+  
   showHolders(): void {
     this.holderService.list()
       .subscribe(
@@ -43,5 +44,7 @@ export class TransactionListComponent implements OnInit {
           console.log(error);
         });
   }
+
+  
 
 }

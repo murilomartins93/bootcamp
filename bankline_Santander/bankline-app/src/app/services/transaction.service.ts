@@ -13,16 +13,16 @@ export class TransactionService {
   constructor(private http: HttpClient) { }
   
   list(): Observable<any> {
-    return this.http.get(`${baseUrl}/transactions`);
+    return this.http.get(`${baseUrl}/transaction`);
+  }
+
+  findByIdAcc(idAcc:any): Observable<any> {
+    return this.http.get(`${baseUrl}/transaction/${idAcc}`);
   }
 
   // adicionando o método de inclusão (POST) via API
   create(transactions:any): Observable<any> {
-    return this.http.post(`${baseUrl}/transactions`,transactions);
-  }
-
-  findByIdAcc(idAcc:any): Observable<any> {
-    return this.http.get(`${baseUrl}/transactions/${idAcc}`);
+    return this.http.post(`${baseUrl}/transaction`,transactions);
   }
 
 }

@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'transaction-new', component: TransactionNewComponent },
   { path: 'transaction', component: TransactionListComponent },
   { path: '', redirectTo: 'transaction', pathMatch: 'full' },
-  { path: 'holders', component: HolderComponent },
+  { path: 'holder', component: HolderComponent },
 ];
 
 @NgModule({

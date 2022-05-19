@@ -14,16 +14,18 @@
       <div class="col-3">
       <div class="d-grid gap-2 d-md-flex ">
           <button class="btn btn-outline-primary me-md-2" type="button" (click)="save()" >Gravar</button>
-          <a routerLink="/transactions" class="btn btn-outline-danger">Voltar</a>
+          <a routerLink="/transaction" class="btn btn-outline-danger">Voltar</a>
         </div>
       </div>
     </div>
     <p></p>
-    <div *ngFor="let item of holders; index as i" class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">{{item.name}}</h5>
-        <p class="card-text">Conta N° {{item.account.number}}</p>
-        <p class="card-text">Saldo {{item.account.balance | currency:'BRL'}}</p>
+    <div class="flex-wrap d-flex justify-content-between">
+      <div *ngFor="let item of holders; index as i" class="card" style="flex: 1 0 21%; height: 100%; width: 18rem; margin-top: 1rem; margin-left: 0.5rem; margin-right: 0.5rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text">Conta N° {{item.account.number}}</p>
+          <p class="card-text">Saldo {{item.account.balance | currency:'BRL'}}</p>
+        </div>
       </div>
     </div>
   </div>
